@@ -129,5 +129,96 @@
         },2000)
     })
 </script>-->
+
+
+    <!--<div ng-app="myapp" ng-controller="myctrl">
+        <p>现在的时间是</p>
+        <span>{{datetime}}</span>
+    </div>
+    <script type="text/javascript">
+        var myapp = angular.module("myapp", []);
+        myapp.controller("myctrl", function ($scope, $interval)
+        {
+            $scope.datetime = new Date().toLocaleTimeString();
+            $interval(function () {
+                $scope.datetime = new Date().toLocaleTimeString();
+            }, 1000)
+        })
+    </script>-->
+
+
+    <!--<div ng-app="myApp" ng-controller="myCtrl">
+
+<p>255 的16进制是:</p>
+
+<h1>{{hex}}</h1>
+
+</div>
+
+<p>自定义服务，用于转换16进制数：</p>
+    <script type="text/javascript">
+        var myapp = angular.module("myApp", []);
+        myapp.service("hexafy", function ()
+        {
+            this.myFunc = function (x)
+            {
+                return x.toString(16);
+            }
+        })
+        myapp.controller('myCtrl', function ($scope, hexafy)
+        {
+            $scope.hex = hexafy.myFunc(96);
+        })
+        </script>-->
+
+
+    <!--<div ng-app="myApp">
+在过滤器中使用服务:
+
+<h1>{{255 | myFormat}}</h1>
+
+</div>
+    <script type="text/javascript">
+        var myapp = angular.module("myApp", []);
+        myapp.service("hexafy", function () {
+            this.myFunc = function (x) {
+                return x.toString(16);
+            }
+        })
+        myapp.filter("myFormat", ["hexafy", function (hexafy) {
+            return function (x)
+            {
+                return hexafy.myFunc(x);
+            }
+        }])
+    </script>-->
+
+
+    
+    <div ng-app="myapp" ng-controller="myctrl">
+        <p>再数组里使用自定义过滤器</p>
+        <ul>
+            <li ng-repeat="x in array">{{x|myFormat}}</li>
+        </ul>
+    </div>
+    <script type="text/javascript">
+        var myapp = angular.module("myapp", []);
+        //定义服务
+        myapp.service("jinzhi", function () {
+            this.MyFun = function (x) {
+                return x.toString(16);
+            }
+        });
+        myapp.filter("myFormat", ["jinzhi", function (jinzhi) {
+            return function (x) {
+                return jinzhi.MyFun(x);
+            }
+        }]);
+        //控制器
+        myapp.controller("myctrl", function ($scope)
+        {
+            $scope.array = [255, 254, 253, 252, 251, 250];
+        })
+    </script>
 </body>
 </html>

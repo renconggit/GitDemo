@@ -8,3 +8,8 @@ E:\GIT\AngularJs\Angular-js\bin\Angular-js.pdb
 E:\GIT\AngularJs\Angular-js\obj\Debug\Angular-js.csprojResolveAssemblyReference.cache
 E:\GIT\AngularJs\Angular-js\obj\Debug\Angular-js.dll
 E:\GIT\AngularJs\Angular-js\obj\Debug\Angular-js.pdb
+E:\GIT\MyGit\AngularJs\Angular-js\bin\Angular-js.dll
+E:\GIT\MyGit\AngularJs\Angular-js\bin\Angular-js.pdb
+E:\GIT\MyGit\AngularJs\Angular-js\obj\Debug\Angular-js.csprojResolveAssemblyReference.cache
+E:\GIT\MyGit\AngularJs\Angular-js\obj\Debug\Angular-js.dll
+E:\GIT\MyGit\AngularJs\Angular-js\obj\Debug\Angular-js.pdb
