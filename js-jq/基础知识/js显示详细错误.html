@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="http://139.129.214.209:4001/js/zepto.min.js">
+
+    </script>
+</head>
+<body>
+
+    <script>
+
+        //解决手机端报错定位问题
+        window.onerror = function (sMsg, sUrl, sLine) {
+            alert("出错详情.\n"+"消息:"+sMsg+"\nURL:"+sUrl+"\n出错行号:"+sLine);
+			
+			//return true； 屏蔽所有错误
+        }
+		fn();
+
+    </script>
+
+</body>
+</html>

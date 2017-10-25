@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../webcss/reset.css" rel="stylesheet" />
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <div>
+        <audio class="audio" controls="controls" autoplay="autoplay" preload="auto" loop="loop" muted="muted">
+            <source src="../webfiles/%e6%b0%b4%e6%9c%a8%e5%b9%b4%e5%8d%8e%20-%20%e5%ae%8c%e7%be%8e%e4%b8%96%e7%95%8c.mp3" type="audio/mpeg" />
+        </audio>
+    </div>
+    <div>
+        <button class="playPause">播放/暂停</button>
+        <button class="makeBig">放大</button>
+        <button class="makeSmall">缩小</button>
+        <button class="makeNormal">普通</button>
+        <button class="makeJump">跳转进度</button>
+        <button class="makeCut">切歌</button>
+        <br>
+    </div>
+    <script type="text/javascript">
+
+
+        $(function () {
+            var audio = $('.audio').get(0);
+
+            //播放速度
+            audio.playbackRate = 2;
+
+            $('.playPause').click(function () {
+                //是否暂停
+                if (audio.paused)
+                    audio.play();//播放
+                else
+                    audio.pause();//暂停
+            });
+
+            $('.makeBig').click(function () {
+                //是否静音
+                audio.muted = false;
+                audio.volume = 1;//音量大小
+            });
+
+            $('.makeSmall').click(function () {
+
+                audio.volume = 0.2;
+            });
+
+            $('.makeNormal').click(function () {
+                audio.muted = false;
+                audio.volume = 0.6;
+            });
+
+            $('.makeJump').click(function () {
+
+                audio.currentTime = audio.duration * 0.8;//当前视频的长度*0.8;
+            });
+
+            $('.makeCut').click(function () {
+                //更改播放源
+                audio.src = "http://bwin0007.com/mp3/Lady%20Antebellum%20-%20Need%20You%20Now.mp3";
+            });
+
+
+        });
+
+    </script>
+
+</body>
+</html>

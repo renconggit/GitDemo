@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../webcss/reset.css" rel="stylesheet" />
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <p>
+        轮询：客户端定时向服务器发送Ajax请求，服务器接到请求后马上返回响应信息并关闭连接。<br />
+        优点：后端程序编写比较容易。<br />
+        缺点：请求中有大半是无用，浪费带宽和服务器资源。<br />
+        实例：适于小型应用<br />
+    </p>
+    <div class="msg">
+    </div>
+    <script type="text/javascript">
+
+        $(function () {
+            //定时发送ajax请求  在轮询的过程中，如果因为网络原因，导致上一个 xhr 对象还没传输完毕，定时器已经开始了下一个询问
+            setInterval(function () {
+                $.get('Polling.aspx', function (data) {
+                    $('.msg').append('<div>' + data.message + '</div>');
+                }, 'json');
+            }, 1000);
+
+        });
+
+    </script>
+</body>
+</html>

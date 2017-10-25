@@ -1,0 +1,131 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>冒泡</title>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+    <div>
+        事件传播的顺序对应浏览器的两种事件流模型：捕获型事件流和冒泡型事件流。<br />
+        冒泡型事件流：事件的传播是从最特定的事件目标到最不特定的事件目标。即从DOM树的叶子到根。【推荐】 <br />
+        捕获型事件流：事件的传播是从最不特定的事件目标到最特定的事件目标。即从DOM树的根到叶子。
+        <br />
+        由于IE8及更早版本只支持事件冒泡,所以通过attachEvent()添加的事件处理程序都会被添加到冒泡阶段<br />
+        IE11只支持addEventListener！<br />
+        IE9，IE10对attachEvent和addEventListener都支持！<br />
+        TE8及以下版本只支持attachEvent！<br />
+    </div>
+    <div>
+        不会冒泡:获得输入焦点的focus事件和失去输入焦点的blur事件。
+
+        hover (同时绑定 mouseenter和 mouseleave事件)<br/>
+        mouseenter<br />
+        mouseleave<br />
+        blur<br />
+        abort<br />
+        error<br />
+        focus<br />
+        resize<br />
+        load<br />
+        unload<br />
+    </div>
+    <input type="button" id="btn" value="冒泡" />
+    <div id="dv">
+        <input type="button" id="btn2" value="捕获" />
+    </div>
+    <a id="lnk" href="http://www.baidu.com">默认事件</a>
+    <script>
+        $(function () {
+
+            $('#btn').click(function () {
+                console.log('#btn.click');
+                return false; //jQuery阻止冒泡  //e.stopPropagation();//js阻止冒泡
+            });
+
+            //jQuery只支持冒泡
+            $(document).click(function () {
+                console.log('document.click');
+            });
+
+
+            //mouseenter  mouseleave 代表不冒泡，子类不会触发父类的事件
+
+            //focusin focusout 代表冒泡  子类会触发父类的事件
+
+            //默认事件
+
+            $('#lnk').click(function (e) {
+                //return false;//也可以阻止默认事件 还会阻止冒泡
+
+                //兼容火狐  火狐不支持window.event
+                var event = window.event || e.originalEvent; //jquery事件中原生事件对象
+
+                //事件触发源头的元素  IE8只支持event.srcElement
+                var tar = event.srcElement || event.target;
+
+                //IE10以上
+                if (event.preventDefault)
+                    event.preventDefault(); //阻止默认事件  //event.preventDefault() //js 阻止默认事件
+                else
+                    event.returnValue = false; //IE10及以下中阻止函数器默认动作的方式
+            });
+
+
+            document.getElementById('lnk').onclick = function (e) {
+                //兼容IE8,因为IE8没有e的参数
+                e = e || window.event;
+                //IE8只支持e.srcElement
+                var tar = e.srcElement || e.target;
+            }
+        });
+
+
+        window.onload = function () {
+
+            //捕获
+            var btn2 = document.getElementById('btn2');
+
+
+            //所有主流浏览器，除了 IE 8 及更早 IE版本
+            if (btn2.addEventListener) {
+
+                btn2.addEventListener("click", function (e) {
+                    console.log('#btn2.click');
+                    e.stopPropagation(); //js阻止冒泡
+                }, true);
+
+            } else {
+                //非主流浏览器 IE8及以下
+                btn2.attachEvent('onclick', function (e) {
+                    console.log('#btn2.click');
+                    e.cancelBubble = true; //IE8 js阻止冒泡
+                });
+            }
+
+
+            //捕获  IE8及以下不支持捕获
+            var dv = document.getElementById('dv');
+
+
+            if (dv.addEventListener) {
+
+                dv.addEventListener('click', function (e) {
+                    console.log('#dv.click');
+                }, true);
+
+            } else {
+
+                dv.attachEvent('onclick', function (e) {
+                    console.log('#dv.click');
+                });
+            }
+        }
+
+    </script>
+</body>
+
+</html>

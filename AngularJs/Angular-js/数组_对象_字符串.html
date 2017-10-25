@@ -1,0 +1,133 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+
+    注意：<p >filter:{name:test}|orderBy:['country','name']</p>
+    <!--<div ng-app="" ng-init="person='我是字符串'">
+        <span ng-bind="person"></span>
+    </div>
+
+    <br />
+
+    <div ng-app="" ng-init="person={name:'张三',sex:'女'}">
+        <p>1:<span ng-bind="person.name"></span></p>
+        <p>2:<span ng-bind="person.sex"></span></p>
+    </div>
+    <br />-->
+
+    <!--<div ng-app="" ng-init="array=[1,2,3,4]">
+        <p>第三个值为 {{ array[2] }}</p>
+        第四个值为<p ng-bind="array[3]"></p>
+    </div>-->
+
+    <!--<div ng-app="" ng-init="names=['郭','李','任','曲']">
+        <ul>
+            <li ng-repeat="x in names">{{x}}
+            </li>
+        </ul>
+    </div>-->
+
+    <!--<div ng-app="" ng-init="data=[{name:'郭傻',sex:'女'},{name:'赵武',sex:'男'},{name:'任⑦',sex:'男'}]">
+        <ul>
+            <li ng-repeat="x in data">
+                <a>{{$index+1}}姓名</a>:<span>{{x.name}}</span>
+                <a>性别</a>:<span>{{x.sex}}</span>
+            </li>
+        </ul>
+    </div>-->
+    
+
+   <!--<div ng-app="myapp" ng-controller="myctrl">
+       数量：<input type="text" name="quantity" ng-model="quantity"  />
+       单价：<input type="text" name="price" ng-model="price"  />
+       总价：<span>{{quantity*price|currency }}</span>
+   </div>
+    <script type="text/javascript">
+        var myapp = angular.module("myapp", []);
+        myapp.controller("myctrl", function ($scope)
+        {
+            $scope.quantity = 1;
+            $scope.price = 0.99;
+        })
+    </script>-->
+
+
+    <!--<div ng-app="myapp" ng-controller="myctrl">
+        <p>输入过滤:</p>
+        <p><input type="text" ng-model="test"></p>
+        <ul>
+            <li ng-repeat=" x in data|filter:{name:test}|orderBy:['country','name']">
+                {{(x.name|reverse)+','+x.country}}
+            </li>
+        </ul>
+        //filter也可以过滤子属性值
+   </div>
+    <script type="text/javascript">
+        var myapp = angular.module("myapp", []);
+        myapp.controller("myctrl", function ($scope) {
+            $scope.data = [{ name: 'xiaohu', country: 'rng' }, { name: 'mlxg', country: 'rng' }, { name: 'uzi', country: 'we' }, { name: 'other', country: 'skt' }];
+        })
+        myapp.filter("reverse", function () {//自定义过滤
+            return function (text)
+            {
+                return text.split("").reverse().join("");
+            }
+        })
+    </script>-->
+
+
+    <!--<div ng-app="myApp" ng-controller="myCtrl">
+<p> 当前页面的url:</p>
+<h3>{{myUrl}}</h3>
+</div>
+
+<p>该实例使用了内建的 $location 服务获取当前页面的 URL。</p>
+    <script type="text/javascript">
+        var myapp = angular.module("myApp", []);
+        myapp.controller("myCtrl", function ($scope, $location) {
+            $scope.myUrl = $location.absUrl();//获取当前地址absUrl()
+        })
+    </script>
+        -->
+
+    <!--div ng-app="myapp" ng-controller="myctrl">
+        <h1>{{mydata}}</h1>
+    </div>
+    <script type="text/javascript">
+        var myapp = angular.module("myapp", []);
+        myapp.controller("myctrl", function ($scope, $http)
+        {
+            $http.get("httpdemo.html").then(function (res) {
+                $scope.mydata = res;
+            })
+        })
+        </script>-->
+
+
+    <!--<div ng-app="myApp" ng-controller="myCtrl"> 
+
+<p>两秒后显示信息:</p>
+
+<h1>{{myHeader}}</h1>
+
+</div>
+
+<p>$timeout 访问在规定的毫秒数后执行指定函数。</p>
+
+<script type="text/javascript">
+    var myapp = angular.module("myApp", []);
+    myapp.controller("myCtrl", function ($scope, $timeout)
+    {
+        $scope.myHeader = "hello guo lao ban";
+        $timeout(function () {
+            $scope.myHeader = "how are you?";
+        },2000)
+    })
+</script>-->
+</body>
+</html>

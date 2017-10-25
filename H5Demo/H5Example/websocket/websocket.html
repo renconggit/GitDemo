@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="../webcss/reset.css" rel="stylesheet" />
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <input id="btnOpen" type="button" value="连接" />
+    <input id="btnSend" type="button" value="发送" />
+    <input id="btnClose" type="button" value="关闭" />
+    <script type="text/javascript">
+
+        // 打开一个 web socket
+        var ws = new WebSocket("ws://localhost:22903/websocket/WSockets.aspx?id=" + 123);
+
+
+        /*
+
+        1、CONNECTING(0) websocket正尝试与服务器建立连接
+　　　　2、OPEN(1) websocket与服务器已经建立连接
+　　　　3、CLOSING(2) websocket正在关闭与服务器的连接
+　　　　4、CLOSED(3) websocket已经关闭了与服务器的连接
+
+
+        */
+
+
+        $(function () {
+
+            function WebSocketTest() {
+                if ("WebSocket" in window) {
+                    console.log("您的浏览器支持 WebSocket!");
+
+
+                    //当网络连接建立时触发该事件
+                    ws.onopen = function () {
+
+                        console.log(ws.readyState);
+                        // Web Socket 已连接上，使用 send() 方法发送数据向远程服务器发送数据
+                        //向远程服务器发送数据
+                        ws.send("发送数据");
+                        console.log("数据发送中...");
+                    };
+
+                    ws.onmessage = function (evt) {
+                        var received_msg = evt.data;
+                        console.log("数据已接收..." + received_msg);
+                    };
+
+                    //关闭该websocket链接
+                    ws.onclose = function () {
+                        // 关闭 websocket
+                        ws.close();
+                        console.log("连接已关闭...");
+                    };
+
+                    //当网络发生错误时触发该事件
+                    ws.onerror = function () {
+
+
+                    };
+                }
+                else {
+                    // 浏览器不支持 WebSocket
+                    alert("您的浏览器不支持 WebSocket!");
+                }
+            }
+
+
+
+            $('#btnOpen').click(function () {
+                WebSocketTest();
+            });
+
+            $('#btnSend').click(function () {
+                ws.send("发送数据QQ");
+            });
+
+            $('#btnClose').click(function () {
+                ws.close();
+            });
+
+        });
+
+    </script>
+</body>
+</html>

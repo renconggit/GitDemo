@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+</head>
+<body>
+
+    <p id="p1"></p>
+    <iframe src="childIframe.html" id="iframe" frameborder="0"></iframe>
+    <script>
+        var iframe = document.getElementById('iframe');
+
+        //访问子页面的元素
+        var childDoc = iframe.contentWindow || iframe.contentDocument;
+
+
+        //IE9,chrome,firefox
+        if (childDoc.addEventListener) {
+            childDoc.addEventListener('DOMContentLoaded', function (event) {
+                console.log("文档加载完成");
+
+                childDoc = childDoc.document || childDoc;
+
+                childDoc.body.style.backgroundColor = '#ccc';
+                childDoc.getElementById('p1').innerText = "我是子页面";
+
+            }, false);
+        } else {
+            //兼容ie8
+            iframe.attachEvent('onreadystatechange', function () {
+                if (iframe.readyState == 'complete') {
+                    console.log("文档加载完成");
+
+                    childDoc = childDoc.document || childDoc;
+
+                    childDoc.body.style.backgroundColor = '#ccc';
+
+                    childDoc.getElementById('p1').innerText = "我是子页面";
+                }
+            });
+
+            var top = childDoc.frameElement == null && childDoc.document.documentElement;
+
+            if (top && top.doScroll) {
+
+                (function () {
+                    try {
+                        // DOM树未创建完之前调用doScroll会抛出错误
+                        childDoc.document.documentElement.doScroll('left');
+                    } catch (e) {
+                        //延迟再试一次~
+                        setTimeout(arguments.callee, 50);
+                        return;
+                    }
+                    // 没有错误就表示DOM树创建完毕，然后立马执行用户回调
+                    console.log("文档加载完成2");
+                })();
+            }
+        }
+
+        iframe.onload = function () {
+            console.log('全部加载完成');
+        }
+
+    </script>
+</body>
+</html>

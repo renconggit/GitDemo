@@ -1,0 +1,92 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>WOW.js – 让页面滚动更有趣</title>
+    <link href="WOW-1.1.0/css/libs/animate.css" rel="stylesheet" />
+    <script src="WOW-1.1.0/dist/wow.min.js"></script>
+    <style type="text/css">
+        html, body {
+            padding: 0;
+            margin: 0;
+			background: #0094ff;
+        }
+		.main{margin-top:700px;}
+        .page {
+            height: 200px;
+            
+            color: #fff;
+            text-align: center;
+            font-size: 5rem;
+        }
+
+        .f4 {
+            font-size: 4rem;
+        }
+
+        .f5 {
+            font-size: 5rem;
+        }
+		.red{background: red;width:200px;height:100px;display:inline-block;}
+		.blue{background: blue;width:200px;height:100px;display:inline-block;}
+		.green{background: green;width:200px;height:100px;display:inline-block;}
+		.yellow{background: yellow;width:200px;height:100px;display:inline-block;}
+    </style>
+</head>
+<body>
+<div style="display:none;">
+	可以加入 data-wow-duration（动画持续时间）和 data-wow-delay（动画延迟时间）属性，如：
+	<div class="wow slideInLeft" data-wow-duration="2s" data-wow-delay="5s"></div>
+	<div class="wow slideInRight" data-wow-offset="10"  data-wow-iteration="10"></div>
+</div>
+    <div class="main">
+        <div class="page"><div class="wow fadeInLeftBig">左渐显</div></div>
+        <div class="page"><div class="wow fadeInRightBig">右渐显</div></div>
+        <div class="page"><div class="wow fadeInUpBig" data-wow-delay="0.3s">上渐显</div></div>
+		
+        <div class="page"><div class="wow slideInLeft">滑动</div></div>
+        <div class="page"><div class="wow slideInRight">滑动</div></div>
+
+        <div class="page"><div class="wow bounceInLeft">反弹</div></div>
+        <div class="page"><div class="wow bounceInRight">反弹</div></div>
+
+        <div class="page"><div class="wow rotateInDownLeft">旋转</div></div>
+        <div class="page"><div class="wow rotateInDownRight">旋转</div></div>
+
+        <div class="page"><div class="wow zoomInLeft">变焦</div></div>
+        <div class="page"><div class="wow zoomInRight">变焦</div></div>
+
+    </div>
+
+
+    <div class="page"><div class="wow rollIn">翻滚</div></div>
+    <div class="page"><div class="wow shake">左右震动</div></div>
+
+    <div class="page"><div class="wow bounce">上下震动</div></div>
+
+    <div class="page"><div class="wow flash">闪现</div></div>
+
+    <div class="page"><div class="wow flip">旋转360°</div></div>
+
+    <div class="page"><div class="wow rubberBand">橡皮筋</div></div>
+	
+	<div class="page">
+		<div class="red wow fadeInUpBig" data-wow-delay="0.3s"></div>
+		<div class="blue wow fadeInUpBig" data-wow-delay="0.6s"></div>
+		<div class="green wow fadeInUpBig" data-wow-delay="0.9s"></div>
+		<div class="yellow wow fadeInUpBig" data-wow-delay="1.2s"></div>
+	</div>
+	
+    <script type="text/javascript">
+
+        var wow = new WOW({
+            boxClass: 'wow',//需要执行动画的元素的 class
+            animateClass: 'animated',//animation.css 动画的 class
+            offset: 0,//距离可视区域多少开始执行动画
+            mobile: true,//否在移动设备上执行动画
+            live: true//异步加载的内容是否有效
+        });
+        wow.init();
+    </script>
+</body>
+</html>

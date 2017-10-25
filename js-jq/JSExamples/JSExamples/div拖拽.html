@@ -1,0 +1,69 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .drag {
+            position: relative;
+            width: 100px;
+            height: 100px;
+            background: #ccc;
+            -moz-user-select: none;
+            -webkit-user-select: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="drag">
+    </div>
+
+    <script>
+
+        $(function () {
+
+            var enabledrop = false;
+            //鼠标相对于div的位置
+            var _location = {};
+
+            $('.drag').mousedown(function (e) {
+                enabledrop = true;
+                var _offset = $(this).offset();
+                _location = { left: e.offsetX, top: e.offsetY };
+                _location = { left: e.pageX - _offset.left, top: e.pageY - _offset.top };
+            });
+
+            $(document).mousemove(function (e) {
+                if (enabledrop) {
+                    var left = e.pageX - _location.left;
+                    var top = e.pageY - _location.top;
+                    if (left < 0) {
+                        left = 0;
+                    } if (top < 0) {
+                        top = 0;
+                    }
+                    $('.drag').css({ left: left, top: top });
+                }
+            });
+
+            $(document).mouseup(function () {
+                enabledrop = false;
+            });
+
+            //阻止页面的选择动作，非常重要，当拖拽发生时，如果存在文本选择，会影响拖拽效果
+            $('.drag').bind('selectstart', function () {
+                return false;
+            });
+
+        });
+
+    </script>
+</body>
+</html>

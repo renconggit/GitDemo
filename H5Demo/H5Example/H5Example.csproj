@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{96E5369C-8F36-4C9B-BA99-AE6EC346633D}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>H5Example</RootNamespace>
+    <AssemblyName>H5Example</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="websocket\websocket.html" />
+    <Content Include="ie兼容模式.html" />
+    <Content Include="websocket\WSockets.aspx" />
+    <Content Include="拖拽\Drag&amp;Drop.html" />
+    <Content Include="geolocation.html" />
+    <Content Include="hivideo\.git\config" />
+    <Content Include="hivideo\.git\description" />
+    <Content Include="hivideo\.git\HEAD" />
+    <Content Include="hivideo\.git\hooks\applypatch-msg.sample" />
+    <Content Include="hivideo\.git\hooks\commit-msg.sample" />
+    <Content Include="hivideo\.git\hooks\post-update.sample" />
+    <Content Include="hivideo\.git\hooks\pre-applypatch.sample" />
+    <Content Include="hivideo\.git\hooks\pre-commit.sample" />
+    <Content Include="hivideo\.git\hooks\pre-push.sample" />
+    <Content Include="hivideo\.git\hooks\pre-rebase.sample" />
+    <Content Include="hivideo\.git\hooks\pre-receive.sample" />
+    <Content Include="hivideo\.git\hooks\prepare-commit-msg.sample" />
+    <Content Include="hivideo\.git\hooks\update.sample" />
+    <Content Include="hivideo\.git\index" />
+    <Content Include="hivideo\.git\info\exclude" />
+    <Content Include="hivideo\.git\logs\HEAD" />
+    <Content Include="hivideo\.git\logs\refs\heads\master" />
+    <Content Include="hivideo\.git\logs\refs\remotes\origin\HEAD" />
+    <Content Include="hivideo\.git\objects\00\0a3a453c294576dc0c98ba53605cbd80748567" />
+    <Content Include="hivideo\.git\objects\01\bf0fb4c86d76193cc9cd524a208853508ef9e4" />
+    <Content Include="hivideo\.git\objects\04\c4e84f0712cf48354f913e9380450760c3ef77" />
+    <Content Include="hivideo\.git\objects\09\e1db68a5b8ff831fdbd27065006c53039fc6b8" />
+    <Content Include="hivideo\.git\objects\0d\433a46c9c55033ac83fe0d87f5d2712c615688" />
+    <Content Include="hivideo\.git\objects\0d\e64add29001a13ebde20c7dff9feacdf38dfca" />
+    <Content Include="hivideo\.git\objects\0f\556b6826048001115fbb03181964b9fc9aa5c6" />
+    <Content Include="hivideo\.git\objects\11\caf37fba9a156d1bd782c752fd7e4f9d668f0e" />
+    <Content Include="hivideo\.git\objects\17\76f9e048732506aa0d79dcda9374a9052331f7" />
+    <Content Include="hivideo\.git\objects\1f\e448eb4f094133f0f663a5aae62f7dcd3531c4" />
+    <Content Include="hivideo\.git\objects\2d\23ef6e93e10470653375fa7468720551ff903c" />
+    <Content Include="hivideo\.git\objects\2f\beb0ca1d1722e52142c8311d8998f99e5216db" />
+    <Content Include="hivideo\.git\objects\42\96bfd15c640e12787718db6cecb9d195adb1a0" />
+    <Content Include="hivideo\.git\objects\42\c13bcdb4adf56e6918fc42510487d6c288fb11" />
+    <Content Include="hivideo\.git\objects\52\6f6353a0524e8c7457a58a3a58fa1f789bff7b" />
+    <Content Include="hivideo\.git\objects\52\b4e533eedfe9d0dbd38fb1efc28393580993bd" />
+    <Content Include="hivideo\.git\objects\54\0756268a30dd0d5d8625cdc8c4db3a0f0b4e02" />
+    <Content Include="hivideo\.git\objects\6d\c6819226c73230525f12649c6be69f6179a94c" />
+    <Content Include="hivideo\.git\objects\70\717675dc45670508a7e9a468ac81da1703014b" />
+    <Content Include="hivideo\.git\objects\72\c0326dd3d1e15512b9a4bcd4fc127281ab9713" />
+    <Content Include="hivideo\.git\objects\75\07e4cf60e0f8b8d6e63a4c14cbfeb106833fca" />
+    <Content Include="hivideo\.git\objects\7c\201b9d6972e3a728111c968b811946f29e2d23" />
+    <Content Include="hivideo\.git\objects\7c\6a63ac647d5efc36b1402b99a15bac09f16bcd" />
+    <Content Include="hivideo\.git\objects\7d\f36ab6c921439c7e193f069f99b82bdf078793" />
+    <Content Include="hivideo\.git\objects\8b\10964ecb5670d1fd0ff5a8817633e7f398d73c" />
+    <Content Include="hivideo\.git\objects\8c\4347479fc471deec03eee4160637501eaebd8f" />
+    <Content Include="hivideo\.git\objects\91\7bee7bd787fa76c36e0d4391260cc1df27bdc4" />
+    <Content Include="hivideo\.git\objects\92\417274f5faadaed67610b464a207c9e2266ff8" />
+    <Content Include="hivideo\.git\objects\96\99c17be4e71bbcd04511f8eee231940d89182d" />
+    <Content Include="hivideo\.git\objects\96\d32deeea1b83d1b4aab0c23a1db6f0fbc2c24b" />
+    <Content Include="hivideo\.git\objects\99\8ef35efddf7cb5d087441eadea9f26f1e7e530" />
+    <Content Include="hivideo\.git\objects\9c\5e874324f76dfe2ede3b0aa5c0d52c36c12547" />
+    <Content Include="hivideo\.git\objects\a7\2e8fa53cd6467b3eea196503390d71d76bb1e2" />
+    <Content Include="hivideo\.git\objects\ac\8fda84183e4fc20c9cb9e936e6d0606400bbae" />
+    <Content Include="hivideo\.git\objects\b1\9b89913d5a5f5463e94fe8edba061eb877e7db" />
+    <Content Include="hivideo\.git\objects\b9\3113854272396a7e80b0cd53ae7971450c8c27" />
+    <Content Include="hivideo\.git\objects\bf\3aa4629cf12b36d1bc4c9d48f34fdd89103c6f" />
+    <Content Include="hivideo\.git\objects\c8\1280ff64d3b422e55bf10717f0cd8dba844755" />
+    <Content Include="hivideo\.git\objects\c8\ddcb5a8330c03293cf19c18257eb76a41adb4b" />
+    <Content Include="hivideo\.git\objects\c9\8f9b611864affac86f1b3cf1dc27be86a2ac27" />
+    <Content Include="hivideo\.git\objects\cc\a915e917c69313d1e11ea02875cddf4e66edaf" />
+    <Content Include="hivideo\.git\objects\d3\a25f05d2c7abb3ad7b15d7a46cde7659979313" />
+    <Content Include="hivideo\.git\objects\dd\64f37c21b4a84fc8c46566e68b060656639ef4" />
+    <Content Include="hivideo\.git\objects\e1\15c29bf514b84b322ecdf7b5f62ec86cb6890b" />
+    <Content Include="hivideo\.git\objects\e6\9de29bb2d1d6434b8b29ae775ad8c2e48c5391" />
+    <Content Include="hivideo\.git\objects\eb\759921fb9c23fbbcb14cb7d5ce3d0d1a4688e4" />
+    <Content Include="hivideo\.git\objects\ec\28bff6739cdb843e7b4a4ce0b851f6a0875c27" />
+    <Content Include="hivideo\.git\objects\ed\5b5015d128dc6d01cf31da2b5d9c2fd191f22f" />
+    <Content Include="hivideo\.git\objects\ef\0167306c6997be1f7af7928981c74f44535937" />
+    <Content Include="hivideo\.git\objects\f1\0dcd1833e96b49151e11d2b30fdff40a98e72e" />
+    <Content Include="hivideo\.git\packed-refs" />
+    <Content Include="hivideo\.git\refs\heads\master" />
+    <Content Include="hivideo\.git\refs\remotes\origin\HEAD" />
+    <Content Include="hivideo\README.md" />
+    <Content Include="SSE\SSE.aspx" />
+    <Content Include="SSE\SSE.html" />
+    <Content Include="轮询\LongPolling.aspx" />
+    <Content Include="轮询\Polling.aspx" />
+    <Content Include="轮询\轮询.html" />
+    <Content Include="轮询\长轮询.html" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="audio\audio.html" />
+    <Content Include="fullscreen.html" />
+    <Content Include="Global.asax" />
+    <Content Include="hivideo\assets\hivideo.css" />
+    <Content Include="hivideo\assets\images\fullscreen.png" />
+    <Content Include="hivideo\assets\images\fullscreen_off.png" />
+    <Content Include="hivideo\assets\images\mute.png" />
+    <Content Include="hivideo\assets\images\pause.png" />
+    <Content Include="hivideo\assets\images\play-big.png" />
+    <Content Include="hivideo\assets\images\play.png" />
+    <Content Include="hivideo\assets\images\stop.png" />
+    <Content Include="hivideo\assets\images\volume.png" />
+    <Content Include="hivideo\assets\video.mp4" />
+    <Content Include="hivideo\hivideo.js" />
+    <Content Include="hivideo\index.html" />
+    <Content Include="HtmlPage1.html" />
+    <Content Include="video\video.html" />
+    <Content Include="Web.config" />
+    <Content Include="webcss\reset.css" />
+    <Content Include="webfiles\1.1.如何创建ASP.NET MVC项目.mp4" />
+    <Content Include="webfiles\水木年华 - 完美世界.mp3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SSE\SSE.aspx.cs">
+      <DependentUpon>SSE.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="SSE\SSE.aspx.designer.cs">
+      <DependentUpon>SSE.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="websocket\WSockets.aspx.cs">
+      <DependentUpon>WSockets.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="websocket\WSockets.aspx.designer.cs">
+      <DependentUpon>WSockets.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="轮询\LongPolling.aspx.cs">
+      <DependentUpon>LongPolling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="轮询\LongPolling.aspx.designer.cs">
+      <DependentUpon>LongPolling.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="轮询\Polling.aspx.cs">
+      <DependentUpon>Polling.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="轮询\Polling.aspx.designer.cs">
+      <DependentUpon>Polling.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="hivideo\.git\objects\info\" />
+    <Folder Include="hivideo\.git\objects\pack\" />
+    <Folder Include="hivideo\.git\refs\tags\" />
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>22903</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:22903/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

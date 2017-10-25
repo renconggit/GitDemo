@@ -1,0 +1,10 @@
+D:\学习示例\MVC\AngularJS\Angular-js\bin\Angular-js.dll
+D:\学习示例\MVC\AngularJS\Angular-js\bin\Angular-js.pdb
+D:\学习示例\MVC\AngularJS\Angular-js\obj\Debug\Angular-js.csprojResolveAssemblyReference.cache
+D:\学习示例\MVC\AngularJS\Angular-js\obj\Debug\Angular-js.dll
+D:\学习示例\MVC\AngularJS\Angular-js\obj\Debug\Angular-js.pdb
+E:\GIT\AngularJs\Angular-js\bin\Angular-js.dll
+E:\GIT\AngularJs\Angular-js\bin\Angular-js.pdb
+E:\GIT\AngularJs\Angular-js\obj\Debug\Angular-js.csprojResolveAssemblyReference.cache
+E:\GIT\AngularJs\Angular-js\obj\Debug\Angular-js.dll
+E:\GIT\AngularJs\Angular-js\obj\Debug\Angular-js.pdb

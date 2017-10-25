@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Animate", "UI\Animate.csproj", "{73D56258-EF08-4EB8-8860-2430BFD3815E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H5", "H5\H5.csproj", "{F4DB92AF-908F-46E1-BD6F-5F9E4848CEFC}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Swiper", "Swiper\Swiper.csproj", "{B8B927F5-C18B-41AE-8941-DAFE003349F4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesome", "FontAwesome\FontAwesome.csproj", "{ACAECA50-F26F-433D-81AA-95B8829056BB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ScrollReveal", "ScrollReveal\ScrollReveal.csproj", "{7121ECFB-3F72-4F76-B32F-7C1D03E22F38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H5Example", "H5Example\H5Example.csproj", "{96E5369C-8F36-4C9B-BA99-AE6EC346633D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{73D56258-EF08-4EB8-8860-2430BFD3815E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{73D56258-EF08-4EB8-8860-2430BFD3815E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{73D56258-EF08-4EB8-8860-2430BFD3815E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{73D56258-EF08-4EB8-8860-2430BFD3815E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F4DB92AF-908F-46E1-BD6F-5F9E4848CEFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F4DB92AF-908F-46E1-BD6F-5F9E4848CEFC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F4DB92AF-908F-46E1-BD6F-5F9E4848CEFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F4DB92AF-908F-46E1-BD6F-5F9E4848CEFC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B8B927F5-C18B-41AE-8941-DAFE003349F4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B8B927F5-C18B-41AE-8941-DAFE003349F4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B8B927F5-C18B-41AE-8941-DAFE003349F4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B8B927F5-C18B-41AE-8941-DAFE003349F4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{ACAECA50-F26F-433D-81AA-95B8829056BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACAECA50-F26F-433D-81AA-95B8829056BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACAECA50-F26F-433D-81AA-95B8829056BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACAECA50-F26F-433D-81AA-95B8829056BB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7121ECFB-3F72-4F76-B32F-7C1D03E22F38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7121ECFB-3F72-4F76-B32F-7C1D03E22F38}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7121ECFB-3F72-4F76-B32F-7C1D03E22F38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7121ECFB-3F72-4F76-B32F-7C1D03E22F38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96E5369C-8F36-4C9B-BA99-AE6EC346633D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96E5369C-8F36-4C9B-BA99-AE6EC346633D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96E5369C-8F36-4C9B-BA99-AE6EC346633D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96E5369C-8F36-4C9B-BA99-AE6EC346633D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

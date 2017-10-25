@@ -1,0 +1,80 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>IE 兼容模式</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=9" />-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=8" />-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=7" />-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=5" />-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE9" />-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />-->
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />-->
+    <!--<meta name="renderer" content="webkit" />-->
+    <!--<meta name="renderer" content="ie-stand">-->
+    <style>
+        html, body {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://msdn.microsoft.com/zh-cn/library/jj676915(v=vs.85).aspx">文档</a>
+    <div>
+        兼容性模式，也就是能够在旧的网站使用兼容性模式浏览，而一切正常，而到比较新的网站就用正常模式浏览。<br />
+        首先网页一定要设定docType，如果不设定，就会以Quirks mode（IE5）浏览。<br />
+        但问题是如果使用者设定使用兼容模式浏览，就算有docType他也会以兼容模式浏览，那该怎么办？ <br />
+        微软因此说我们可以加一个metatag告知要使用的IE版本，而也是使用这个就能够强制不要使用兼容模式浏览<br />
+        那个“IE=Edge”表示使用目前IE最新的正常模式去浏览。当然，你也可以指定要使用哪一个版本的IE去浏览。<br />
+        而作用就是在IE内使用Chrome来显示页面，这样老旧的IE就可以浏览一些新的页面也不出问题，而那个Chrome=1就表示如果有装，就启用。
+    </div>
+    <div>
+        为什么要用X-UA-Compatible？<br />
+
+        在IE8刚推出的时候，很多网页由于重构的问题，无法适应较高级的浏览器，所以使用X-UA-Compatible标签强制IE8采用低版本方式渲染。<br />
+
+        前绝大多数网站都用&lt;meta http-equiv="X-UA-Compatible" content="IE =EmulateIE7" /&gt;。为了避免制作出的页面在IE8下面出现错误，建议直接将IE8使用IE7进行渲染。也就是直接在页面的header的meta标签中加入如下代码：
+    </div>
+    <div>
+
+        EmulateIE7与 IE7 模式不同，EmulateIE7 模式遵循 <!DOCTYPE> 指令。对于多数网站来说，它是首选的兼容性模式。
+    </div>
+    <div>
+        在某些情况下，您可能希望Internet Explorer使用文档类型声明来将网页限制在特定的标准模式，或者使用表示较旧版本的浏览器（如Internet Explorer 5.5）的文档模式。
+    </div>
+    <div> 从IE11开始，EdgeHTML模式被认为是首选文档模式</div>
+    <div>
+        IE=edeg,chrome=1 使用最新的解析
+    </div>
+    <div>
+        IE=9 使用ie9的解析
+    </div>
+    <div>
+        IE=8 使用ie8的解析
+    </div>
+    <div>
+        IE=7 使用ie7的解析(标准模式)
+    </div>
+    <div>
+        IE=5 使用ie5的解析(Quirks模式) IE5就是 Quirks Mode
+    </div>
+
+    <div>
+        IE=EmulateIE9 使用ie9的解析(仿真标准模式) 根据doctype决定
+    </div>
+
+    <div>
+        IE=EmulateIE8 使用ie8的解析(仿真标准模式) 根据doctype决定
+    </div>
+
+    <div>
+        IE=EmulateIE7 模仿 IE7”模式兼容性(仿真标准模式) 根据doctype决定
+    </div>
+</body>
+</html>

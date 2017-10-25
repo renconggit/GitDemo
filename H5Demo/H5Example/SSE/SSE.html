@@ -1,0 +1,29 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+
+    <link href="../webcss/reset.css" rel="stylesheet" />
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+</head>
+<body>
+    <p>
+        HTML5 服务器发送事件（server-sent event）允许网页获得来自服务器的更新。<br />
+    </p>
+    <div class="msg">
+    </div>
+    <script type="text/javascript">
+
+        $(function () {
+            if (window.EventSource) {
+
+                var source = new EventSource("sse.aspx");
+                source.onmessage = function (event) {
+                    $('.msg').append(event.data + "<br/>");
+                };
+            }
+        });
+    </script>
+</body>
+</html>

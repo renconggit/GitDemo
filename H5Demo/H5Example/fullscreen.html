@@ -1,0 +1,106 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="full-screen" content="true"><!--用这种也可以实现全屏-->
+    <style type="text/css">
+        :-webkit-full-screen {
+            background-color: black;
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+
+    IE11支持全屏模式
+
+    <script type="text/javascript">
+
+        document.addEventListener('click', function () {
+
+            if (fullScreenEnabled()) {
+                if (!isFullScreen()) {
+                    requestFullScreen();
+                } else {
+                    exitFullScreen();
+                }
+            }
+        }, false);
+
+        //进入全屏
+        function requestFullScreen() {
+            var de = document.documentElement;
+            if (de.requestFullscreen) {
+                de.requestFullscreen();
+            } else if (de.webkitRequestFullScreen) {
+                de.webkitRequestFullScreen();
+            } else if (de.mozRequestFullScreen) {
+                de.mozRequestFullScreen();
+            } else if (de.oRequestFullscreen) {
+                de.oRequestFullscreen();
+            } else if (de.msRequestFullscreen) {
+                de.msRequestFullscreen();
+            }
+        }
+
+        //当前全屏状态
+        function isFullScreen() {
+            return document.IsFullScreen ||
+            document.webkitIsFullScreen ||
+            document.mozFullScreen ||
+            document.oIsFullScreen ||
+            (document.msFullscreenElement);
+        }
+
+        //是否支持全屏
+        function fullScreenEnabled() {
+            return document.FullScreenEnabled ||
+            document.webkitFullscreenEnabled ||
+            document.mozFullScreenEnabled ||
+            document.oFullScreenEnabled ||
+            document.msFullscreenEnabled;
+        }
+
+        //全屏Dom对象
+        function fullScreenElement() {
+            return document.FullscreenElement ||
+            document.webkitFullscreenElement ||
+            document.mozFullscreenElement ||
+            document.oFullscreenElement ||
+            document.msFullscreenElement;
+
+        }
+
+        //退出全屏
+        function exitFullScreen() {
+            var de = document;
+            if (de.exitFullscreen) {
+                de.exitFullscreen();
+            } else if (de.webkitCancelFullScreen) {
+                de.webkitCancelFullScreen();
+            } else if (de.mozCancelFullScreen) {
+                de.mozCancelFullScreen();
+            } else if (de.oCancelFullScreen) {
+                de.oCancelFullScreen();
+            } else if (de.msExitFullscreen) {
+                de.msExitFullscreen();
+            }
+        }
+
+        //全屏修改
+        function fullscreenchange() {
+            return document.onfullscreenchange ||
+                onwebkitfullscreenchange ||
+                onmozfullscreenchange ||
+                onofullscreenchange ||
+                onmsfullscreenchange
+        }
+
+    </script>
+</body>
+</html>

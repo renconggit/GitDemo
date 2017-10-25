@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>页面滚动显示动画</title>
+    <script src="scrollreveal-master/dist/scrollreveal.min.js"></script>
+</head>
+<body>
+    <!-- HTML -->
+    <div class="foo"> Foo </div>
+    <div class="bar"> Bar </div>
+
+
+    <script type="text/javascript">
+        // JavaScript
+        //window.sr = ScrollReveal();
+        //sr.reveal('.foo');
+        //sr.reveal('.bar');
+
+        // Changing the defaults
+        window.sr = ScrollReveal({ reset: true });
+
+        // Customizing a reveal set
+        sr.reveal('.foo', { duration: 200 });
+
+    </script>
+</body>
+</html>

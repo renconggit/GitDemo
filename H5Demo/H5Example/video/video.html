@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <meta name="viewport" content="width=device-width">
+    <link href="../webcss/reset.css" rel="stylesheet" />
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        .video {
+            width: 60%;
+            height: 100%;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <video class="video" autoplay="autoplay" controls="controls" loop="loop" preload="auto" muted="muted">
+            <source src="../webfiles/1.1.%e5%a6%82%e4%bd%95%e5%88%9b%e5%bb%baASP.NET%20MVC%e9%a1%b9%e7%9b%ae.mp4" type="video/mp4" />
+            <object data="movie.mp4" width="320" height="240">
+                <embed src="movie.swf" width="320" height="240">
+            </object>
+            您的浏览器不支持 video 标签。
+        </video>
+        <track src="subtitles_en.vtt" kind="subtitles" srclang="en"
+               label="English">
+        <track src="subtitles_no.vtt" kind="subtitles" srclang="no"
+               label="Norwegian">
+    </div>
+    <div>
+        <button class="playPause">播放/暂停</button>
+        <button class="makeBig">放大</button>
+        <button class="makeSmall">缩小</button>
+        <button class="makeNormal">普通</button>
+        <button class="makeJump">跳转进度</button>
+        <button class="makeCut">切歌</button>
+        <button class="makeFullscreen">全屏</button>
+        <br />
+        <button class="makeVolumeBig">音量放大</button>
+        <button class="makeVolumeSmall">音量缩小</button>
+        <button class="makeVolumeNormal">音量普通</button>
+        <br>
+    </div>
+
+    <script type="text/javascript">
+
+
+        $(function () {
+            var video = $('.video').get(0);
+
+            //设置封面
+            video.poster = "http://v.77mv.com.cn/UpLoadFiles/20170918/2017091810145297.jpg";
+            //自动播放
+            video.autoplay = false;
+            //控制器
+            video.controls = false;
+            //循环播放
+            video.loop = false;
+            //静音播放
+            video.muted = false;
+            //预加载
+            video.preload = 'auto';
+            //视频宽度
+            video.width = 1080;
+            video.height = 720;
+
+            //播放速度
+            /*
+            1.0 正常速度
+            0.5 半速（更慢）
+            2.0 倍速（更快）
+            -1.0 向后，正常速度
+            -0.5 向后，半速*/
+            video.playbackRate = 2;
+
+            $('.playPause').click(function () {
+                if (video.paused)
+                    video.play();
+                else
+                    video.pause();
+            });
+
+            $('.makeBig').click(function () {
+                $('.video').css('width', '80%');
+            });
+
+            $('.makeSmall').click(function () {
+                $('.video').css('width', '40%');
+            });
+
+            $('.makeNormal').click(function () {
+                $('.video').css('width', '60%');
+            });
+
+            $('.makeVolumeBig').click(function () {
+                //是否静音
+                video.muted = false;
+                video.volume = 1;//音量大小
+            });
+
+            $('.makeVolumeSmall').click(function () {
+                video.volume = 0.2;
+            });
+
+            $('.makeVolumeNormal').click(function () {
+                video.muted = false;
+                video.volume = 0.6;
+            });
+
+
+            $('.makeJump').click(function () {
+
+                video.currentTime = video.duration * 0.8;//当前视频的长度*0.8
+            });
+
+            $('.makeCut').click(function () {
+                //更改播放源
+                video.src = "http://112.253.22.162/1/f/n/c/t/fnctoosglkdsyyoqttwdffqitohyqc/hd.yinyuetai.com/7F9A015722D705AAA197F506934E2730.flv?sc\u003d5a041a1ac801490d\u0026br\u003d1101\u0026vid\u003d2677737\u0026aid\u003d4548\u0026area\u003dML\u0026vst\u003d0";
+            });
+
+            //全屏切换
+            $('.makeFullscreen,.video').click(function () {
+                if (video.webkitSupportsFullscreen) {
+                    if (!video.webkitDisplayingFullscreen) {
+                        video.webkitRequestFullscreen();
+                    } else {
+                        video.webkitExitFullscreen();
+                    }
+                }
+            });
+
+        });
+
+    </script>
+</body>
+</html>

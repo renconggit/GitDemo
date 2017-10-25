@@ -1,0 +1,91 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>font awesome</title>
+    <link href="font-awesome-4.7.0/css/font-awesome.min.css" rel="stylesheet" />
+    <style type="text/css">
+        .list-group {
+            margin-bottom: 20px;
+            padding-left: 0;
+            width: 200px;
+        }
+
+        .list-group-item {
+            position: relative;
+            display: block;
+            padding: 10px 15px;
+            margin-bottom: -1px;
+            background-color: #ffffff;
+            border: 1px solid #dddddd;
+        }
+
+        a.list-group-item {
+            text-decoration: none;
+        }
+
+            a.list-group-item:hover, a.list-group-item:focus {
+                text-decoration: none;
+                color: #555555;
+                background-color: #f5f5f5;
+            }
+    </style>
+</head>
+<body>
+    <p>
+        您可以将Font Awesome图标使用在几乎任何地方，只需要使用CSS前缀 fa ，再加上图标名称。
+        Font Awesome是为使用内联元素而设计的。我们通常更喜欢使用 &lt;i&gt;，因为它更简洁。 但实际上使用 &lt;span&gt; 才能更加语义化。
+    </p>
+    <i class="fa fa-camera-retro"></i> fa-camera-retro
+
+    <p>
+        使用 fa-lg (33%递增)、fa-2x、 fa-3x、fa-4x，或者 fa-5x 类 来放大图标。
+    </p>
+    <i class="fa fa-camera-retro fa-lg"></i> fa-lg<br />
+    <i class="fa fa-camera-retro fa-2x"></i> fa-2x<br />
+    <i class="fa fa-camera-retro fa-3x"></i> fa-3x<br />
+    <i class="fa fa-camera-retro fa-4x"></i> fa-4x<br />
+    <i class="fa fa-camera-retro fa-5x"></i> fa-5x<br />
+
+    <p>使用 fa-fw 可以将图标设置为一个固定宽度。主要用于不同宽度图标无法对齐的情况。 尤其在列表或导航时起到重要作用。</p>
+
+    <div class="list-group">
+        <a class="list-group-item" href="#"><i class="fa fa-home fa-fw"></i>&nbsp; Home</a>
+        <a class="list-group-item" href="#"><i class="fa fa-book fa-fw"></i>&nbsp; Library</a>
+        <a class="list-group-item" href="#"><i class="fa fa-pencil fa-fw"></i>&nbsp; Applications</a>
+        <a class="list-group-item" href="#"><i class="fa fa-cog fa-fw"></i>&nbsp; Settings</a>
+    </div>
+
+
+    <p>
+        使用 fa-ul 和 fa-li 便可以简单的将无序列表的默认符号替换掉。
+    </p>
+
+    <ul class="fa-ul">
+        <li><i class="fa-li fa fa-check-square"></i>List icons</li>
+        <li><i class="fa-li fa fa-check-square"></i>can be used</li>
+        <li><i class="fa-li fa fa-spinner fa-spin"></i>as bullets</li>
+        <li><i class="fa-li fa fa-square"></i>in lists</li>
+    </ul>
+
+    <p>
+        使用 fa-spin 类来使任意图标旋转，现在您还可以使用 fa-pulse 来使其进行8方位旋转。尤其适合 fa-spinner、fa-refresh 和 fa-cog 。
+    </p><p>CSS3动画不支持IE8-IE9。</p>
+    <i class="fa fa-spinner fa-spin"></i>
+    <i class="fa fa-circle-o-notch fa-spin"></i>
+    <i class="fa fa-refresh fa-spin"></i>
+    <i class="fa fa-cog fa-spin"></i>
+    <i class="fa fa-spinner fa-pulse"></i>
+
+    <p>
+        使用 fa-rotate-* 和 fa-flip-* 类可以对图标进行任意旋转和翻转。
+    </p>
+    <i class="fa fa-shield"></i> normal<br>
+    <i class="fa fa-shield fa-rotate-90"></i> fa-rotate-90<br>
+    <i class="fa fa-shield fa-rotate-180"></i> fa-rotate-180<br>
+    <i class="fa fa-shield fa-rotate-270"></i> fa-rotate-270<br>
+    <i class="fa fa-shield fa-flip-horizontal"></i> fa-flip-horizontal<br>
+    <i class="fa fa-shield fa-flip-vertical"></i> icon-flip-vertical
+
+</body>
+</html>

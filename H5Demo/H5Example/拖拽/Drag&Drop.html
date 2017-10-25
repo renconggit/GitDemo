@@ -1,0 +1,56 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link href="webcss/reset.css" rel="stylesheet" />
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <style>
+        .parentDrag {
+            width: 200px;
+            height: 200px;
+            border: 1px solid #ddd;
+            display: inline-block;
+        }
+
+        .drag {
+            display: block;
+        }
+    </style>
+</head>
+<body>
+    <div class="parentDrag">
+        <img class="drag" draggable="true" src="http://www.runoob.com/try/demo_source/img_w3slogo.gif" />
+    </div><div class="parentDrag">
+    </div>
+    <script type="text/javascript">
+
+        $(function () {
+
+            //当放置被拖数据时
+            $('.parentDrag').bind('drop', function (e) {
+                
+                e.preventDefault();//避免浏览器对数据的默认处理
+                //返回在 setData() 方法中设置为相同类型的任何数据
+                var data = e.originalEvent.dataTransfer.getData("Text");
+                $(this).append($(data));
+            });
+
+            //放到何处
+            $('.parentDrag').bind('dragover', function (e) {
+                e.preventDefault();//必须阻止对元素的默认处理方式
+            });
+
+            //当元素被拖动
+            $('.drag').bind('dragstart', function (e) {
+                //设置被拖数据的数据类型和值
+                e.originalEvent.dataTransfer.setData("Text", '.' + e.target.className);
+            });
+
+
+
+        });
+
+    </script>
+</body>
+</html>

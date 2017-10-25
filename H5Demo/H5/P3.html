@@ -1,0 +1,159 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--width：viewport宽度；height：viewport 高度(通常可以不设置)；initial-scale：初始缩放比例；maximum-scale：最大缩放比例；minimum-scale：最小缩放比例；user-scalable：是否允许缩放(yes/no)-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+    <title>V2</title>
+    <link href="css/animations.css" rel="stylesheet" />
+    <script src="js/zepto.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/debug.min.js"></script>
+    <style>
+        #pages {
+            width: 100%;
+            height: 100%;
+            font-size: 3rem;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+            z-index: 1;
+        }
+
+            .page img {
+                width: 100%; /*图片自适应*/
+                height: 100%;
+            }
+
+        .page1 {
+            background: blue;
+            display: block;
+            z-index: 100;
+        }
+
+        .page2 {
+            background: red;
+        }
+
+        .page3 {
+            background: #ca2eaf;
+        }
+
+        .page4 {
+            background: green;
+        }
+
+        .page5 {
+            background: #ff050e;
+        }
+
+        .page6 {
+            background: #999999;
+        }
+
+        .page7 {
+            background: #444400;
+        }
+
+        .page8 {
+            background: #267DB7;
+        }
+
+        .page9 {
+            background: #ffcc80;
+        }
+
+        .hide {
+            z-index: 99;
+        }
+
+        .show {
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div id="pages">
+        <div class="page page1"><img src="images/001.jpg" alt="" /></div>
+        <div class="page page2"><img src="images/002.jpg" alt="" /></div>
+        <div class="page page3"><img src="images/003.jpg" alt="" /></div>
+        <div class="page page4"><img src="images/004.jpg" alt="" /></div>
+        <div class="page page5"><img src="images/005.jpg" alt="" /></div>
+        <div class="page page6"><img src="images/006.jpg" alt="" /></div>
+        <div class="page page7"><img src="images/007.jpg" alt="" /></div>
+        <div class="page page8"><img src="images/008.jpg" alt="" /></div>
+        <div class="page page9"><img src="images/009.jpg" alt="" /></div>
+    </div>
+    <script>
+        var cur = {
+            index: 0
+        };
+        //测试对swipeUp(向上滑动)的监听是否有效
+        $(document).swipeUp(function () {
+            //debug.success('Up');
+
+            $('.page').eq(cur.index).removeClass('show pt-page-moveFromBottomFade').addClass("hide pt-page-moveToTopFade");
+
+            if (cur.index <= 0) {
+                cur.index = $('.page').length - 1;
+            } else {
+                --cur.index;
+            }
+
+            $('.page').eq(cur.index).removeClass('hide pt-page-moveToTopFade').addClass("show pt-page-moveFromBottomFade");
+        });
+
+
+        var curpage = 1;
+        var totalpage, nextpage, lastpage, nexttotalpage;
+
+        //测试对swipeDown(向下滑动)的监听是否有效
+        $(document).swipeDown(function () {
+            //判断当前页是否为最后一页
+
+            //获取总页数,以及总页数的+1后的序号，供后面for循环使用
+            totalpage = $(".page").length;
+            nexttotalpage = totalpage + 1;
+            //如果是最后一页，显示第一页，并移除所有page上的所有css效果类，否则显示下一页，并移除上一页的切换动画效果
+            if (curpage == totalpage) {
+                for (var i = 1; i < nexttotalpage; i++) {
+                    $(".page" + i).removeClass("hide");
+                    $(".page" + i).removeClass("show");
+                    $(".page" + i).removeClass("pt-page-moveFromBottomFade");
+                }
+                $(".page1").addClass("show");
+                $(".page1").addClass("pt-page-moveFromBottomFade");
+                curpage = 1;
+            } else {
+                nextpage = curpage + 1;
+                lastpage = curpage - 1;
+                $(".page" + curpage).removeClass("pt-page-moveFromBottomFade");
+                $(".page" + curpage).addClass("pt-page-moveToTopFade");
+                $(".page" + curpage).removeClass("show");
+                $(".page" + curpage).addClass("hide");
+                $(".page" + nextpage).removeClass("hide");
+                $(".page" + nextpage).addClass("show");
+                $(".page" + nextpage).addClass("pt-page-moveFromBottomFade");
+                $(".page" + lastpage).removeClass("pt-page-moveToTopFade");
+                curpage = nextpage;
+            }
+        });
+
+        //测试对swipeLeft(向左滑动)的监听是否有效
+        $(document).swipeLeft(function () {
+            debug.success('left');
+        });
+
+        //测试对swipeRight(向右滑动)的监听是否有效
+        $(document).swipeRight(function () {
+            debug.success('right');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src="http://libs.baidu.com/jquery/1.9.1/jquery.min.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+
+        .main {
+            overflow: hidden;
+        }
+
+            .main .left {
+                width: 300px;
+                height: 100%;
+                background: #9a9a9a;
+                position: relative;
+                float: left;
+            }
+
+            .main .right {
+                height: 100%;
+                background: #e1dddd;
+                overflow: hidden;
+            }
+
+            .main .bar {
+                width: 3px;
+                height: 100%;
+                position: absolute;
+                top: 0;
+                left: 300px;
+                z-index: 1000;
+                cursor: col-resize;
+            }
+
+
+            .main .f-iframe {
+                height: 100%;
+                width: 100%;
+                border: 0;
+                overflow: auto;
+                border-width: 0;
+            }
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="left">
+            <iframe src="b.html" class="f-iframe" frameborder="0"></iframe>
+        </div>
+        <div class="bar">
+        </div>
+        <div class="right">
+            <iframe src="b.html" class="f-iframe" frameborder="0"></iframe>
+        </div>
+    </div>
+    <script>
+        $(function () {
+
+            var enabledrop = false;
+            var local = {};
+            var eleclone;
+            $('.main').height($(window).height());
+            var $mask;
+
+            $('.bar').mousedown(function (e) {
+                enabledrop = true;
+                local = {
+                    left: e.pageX
+                };
+
+                $mask = $('<div style="position:absolute;left:0;top:0;"></div>')
+                    .css({ width: $(window).width(), height: $(window).height() });
+
+                $('body').append($mask);
+            });
+
+            $(document).mousemove(function (e) {
+                if (enabledrop) {
+
+                    $('.bar').css({
+                        left: e.pageX,
+                        background: 'red'
+                    });
+                }
+
+            });
+
+            $(document).mouseup(function (e) {
+                if (enabledrop) {
+                    enabledrop = false;
+                    local = {
+                        left: e.pageX
+                    };
+
+                    $('.bar').css({ background: 'transparent' });
+                    $('.left').width(e.pageX);
+                    $mask.remove();
+                }
+            });
+
+            //阻止页面的选择动作，非常重要，当拖拽发生时，如果存在文本选择，会影响拖拽效果
+            $(document).bind('selectstart', function () {
+                return false;
+            });
+        });
+
+    </script>
+</body>
+
+</html>

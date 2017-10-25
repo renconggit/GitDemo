@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <!--width：viewport宽度；height：viewport 高度(通常可以不设置)；initial-scale：初始缩放比例；maximum-scale：最大缩放比例；minimum-scale：最小缩放比例；user-scalable：是否允许缩放(yes/no)-->
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,maximum-scale=1.0,minimum-scale=1.0,user-scalable=0" />
+    <meta name="x5-fullscreen" content="true">
+    <meta name="full-screen" content="yes">
+    <title>V1</title>
+    <link href="css/animations.css" rel="stylesheet" />
+    <script src="js/zepto.js"></script>
+    <script src="js/touch.js"></script>
+    <script src="js/debug.min.js"></script>
+    <style>
+        html, body {
+            padding: 0;
+            margin: 0;
+        }
+
+        #pages {
+            width: 100%;
+            height: 100%;
+            font-size: 3rem;
+        }
+
+        .page {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            color: white;
+        }
+
+        .page1 {
+            background: blue;
+            z-index: 100;
+        }
+
+        .page2 {
+            background: red;
+        }
+
+        .page3 {
+            background: #ca2eaf;
+        }
+
+        .page4 {
+            background: green;
+        }
+
+        .hide {
+            z-index: 99;
+        }
+
+        .show {
+            z-index: 100;
+        }
+    </style>
+</head>
+<body>
+    <div id="pages">
+        <div class="page page1">页面一</div>
+        <div class="page page2">页面二</div>
+        <div class="page page3">页面三</div>
+        <div class="page page4">页面四</div>
+    </div>
+    <script>
+        var cur = {
+            index: 0
+        };
+
+        $('body').on('touchmove', function (event) { event.preventDefault(); });
+        document.addEventListener('touchmove', function (e) { e.preventDefault() }, false);
+
+        //测试对swipeUp(向上滑动)的监听是否有效
+        $(document).swipeUp(function () {
+            //debug.success('Up');
+
+            $('.page').eq(cur.index).removeClass("show pt-page-moveFromBottom").addClass("hide pt-page-moveToTop");
+
+            if (cur.index <= 0) {
+                cur.index = $('.page').length - 1;
+            } else {
+                --cur.index;
+            }
+
+            $('.page').eq(cur.index).removeClass("hide pt-page-moveToTop").addClass("show pt-page-moveFromBottom");
+        });
+
+        //测试对swipeDown(向下滑动)的监听是否有效
+        $(document).swipeDown(function (e) {
+            //debug.success('Down');
+
+            $('.page').eq(cur.index).removeClass("show pt-page-moveFromBottom").addClass("hide pt-page-moveToTop");//往上走
+
+            if (cur.index >= $('.page').length - 1) {
+                cur.index = 0;
+            } else {
+                ++cur.index;
+            }
+
+            $('.page').eq(cur.index).removeClass("hide pt-page-moveToTop").addClass("show pt-page-moveFromBottom");//从下而上
+        });
+
+        //测试对swipeLeft(向左滑动)的监听是否有效
+        $(document).swipeLeft(function () {
+            debug.success('left');
+        });
+
+        //测试对swipeRight(向右滑动)的监听是否有效
+        $(document).swipeRight(function () {
+            debug.success('right');
+        });
+    </script>
+</body>
+</html>
