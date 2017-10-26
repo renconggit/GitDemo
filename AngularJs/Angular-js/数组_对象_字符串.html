@@ -7,7 +7,7 @@
 </head>
 <body>
 
-    注意：<p >filter:{name:test}|orderBy:['country','name']</p>
+    注意：<p >filter:{name:test}|orderBy:['country','name']$timeout  $interval</p>
     <!--<div ng-app="" ng-init="person='我是字符串'">
         <span ng-bind="person"></span>
     </div>
@@ -195,7 +195,7 @@
 
 
     
-    <div ng-app="myapp" ng-controller="myctrl">
+    <!--<div ng-app="myapp" ng-controller="myctrl">
         <p>再数组里使用自定义过滤器</p>
         <ul>
             <li ng-repeat="x in array">{{x|myFormat}}</li>
@@ -219,6 +219,75 @@
         {
             $scope.array = [255, 254, 253, 252, 251, 250];
         })
-    </script>
+    </script>-->
+
+   <!-- <div ng-app="myApp" ng-controller="siteCtrl"> 
+
+<ul>
+  <li ng-repeat="x in names">
+    {{ x.Name + ', ' + x.Country }}
+  </li>
+</ul>
+
+</div>
+    <script>
+        var app = angular.module('myApp', []);
+
+        app.controller("siteCtrl", function ($scope, $http)
+        {
+            $http({
+                method: "get",
+                url: "/json.html"
+            }).then(function a(data)
+            {
+                $scope.names = data.data.sites;
+            }, function b()
+            {
+                
+            })
+        })
+</script>-->
+
+
+
+    <!--<div ng-app="myApp" ng-controller="myCtrl">
+        <select ng-init="selectedname=names[0]" ng-model="selectedname"  ng-options="x for x in names"></select>
+        
+
+    <select>
+        <option ng-repeat="x in names">{{x}}</option>
+    </select>
+        </div>
+    <script type="text/javascript">
+        var myapp = angular.module("myApp", []);
+        myapp.controller("myCtrl", function ($scope) {
+            $scope.names=["中国","日本","韩国","朝鲜","俄罗斯","美国"]
+        })
+    </script>-->
+
+
+    <!--<div ng-app="myapp" ng-controller="myctrl">
+        <select ng-model="selectname">
+            <option ng-repeat="x in names" value="{{x.url}}">{{x.site}}</option>
+        </select>
+        <p>你选择的是{{selectname}}</p>
+    </div>
+    <script type="text/javascript">
+        var myapp = angular.module("myapp", []);
+        myapp.controller("myctrl", function ($scope) {
+            $scope.names = [{ site: "百度", url: "www.baidu.com" }, { site: "谷歌", url: "www.goole.com" }, { site: "必应", url: "www.biying.com" }]
+        })
+    </script>-->
+
+    <div ng-app="myapp" ng-controller="myctrl">
+        <select ng-model="select" ng-options="x for (x,y) in names"></select>
+        <p>你选择的是{{select}}</p>
+    </div>
+    <script type="text/javascript">
+        var myapp = angular.module("myapp", []);
+        myapp.controller("myctrl", function ($scope) {
+            $scope.names = { site01: "baidu", site02: "goole", site03: "Runoob" };
+        })
+        </script>
 </body>
 </html>

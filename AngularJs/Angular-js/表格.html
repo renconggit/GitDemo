@@ -1,0 +1,61 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>表格布局</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+    <style>
+        body:{
+            margin:0px;
+            padding:0px;
+        }
+        table, th, td {
+            border: 1px solid #ccc;
+            padding: 5px;
+            border-collapse: collapse;
+        }
+            table tr:nth-child(odd) {
+                background-color:#808080;
+            }
+             table tr:nth-child(even) {
+                 background-color:#ccc;
+            }
+        table {
+            width:900px;
+            margin:0 auto;
+        }
+    </style>
+<body>
+    <div ng-app="myapp" ng-controller="myctrl">
+        <table>
+            <tr ng-repeat=" x in country|orderBy:'Country'">
+                <td>{{$index+1}}</td>
+                <td>{{x.Name}}</td>
+                <td>{{x.City}}</td>
+                <td>{{x.Country|uppercase}}</td>
+                <td ng-if="$odd" style="background-color:#ccc;">odd-{{x.Name}}</td>
+                <td ng-if="$even" style="background-color:#808080;">even-{{x.Name}}</td>
+                
+            </tr>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        var myapp = angular.module("myapp", []);
+        myapp.controller("myctrl", function ($scope, $http)
+        {
+            $http({
+                method: "get",
+                url: "/country.html"
+            }).then(function a(res) {
+                $scope.country = res.data.records;
+                
+            }, function b()
+            {
+                alert("获取失败!")
+            })
+        })
+    </script>
+</body>
+</html>

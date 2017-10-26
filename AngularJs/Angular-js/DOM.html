@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>DOM</title>
+    <script src="http://cdn.static.runoob.com/libs/angular.js/1.4.6/angular.min.js"></script>
+</head>
+<body>
+    <div ng-app="" ng-init="houe=12">
+        <p ng-show="true">ng-show我是可见的</p>
+        <p ng-show="false">ng-show我是不可间的</p>
+        <p ng-show="houe>12">ng-show我是根据条件来判断的</p>
+
+
+        <p ng-hide="true">ng-hide我是隐藏的</p>
+        <p ng-hide="false">ng-hide我是显示的</p>
+        <p ng-hide="houe>12">ng-hide我是根据条件来判断的</p>
+    </div>
+</body>
+</html>
